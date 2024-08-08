@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | [Challenge Name Here]</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    />
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      @import url("https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:500,600");
+      :root {
+        --c-primary-moderate-violet: hsl(263, 55%, 52%);
+        --c-primary-violet: hsl(264, 82%, 70%);
+
+        --c-primary-very-dark-grayish-blue: hsl(217, 19%, 35%);
+        --c-primary-very-dark-blackish-blue: hsl(219, 29%, 14%);
+        --c-primary-white: hsl(0, 0%, 100%);
+        --c-primary-light-gray: hsl(0, 0%, 81%);
+        --c-primary-light-grayish-blue: hsl(210, 46%, 95%);
+
+        
+        --font-semibold: 600;
+        --font-extralight: 200;
+        --font-normal: 400;
+        --font-medium:500;
+        
+        font-size: 62.5%;
+      }
+
+      body {
+        font-family: "Barlow Semi Condensed", sans-serif;
+        background-color: var(--c-primary-light-grayish-blue);
+      }
+
+      main {
+        display: flex;
+        justify-content: center;
+      }
+
+      .container {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+
+      .card {
+        border-radius: 0.8rem;
+        max-width: 32.7rem;
+        padding: 3.2rem;
+
+        margin-bottom: 2.4rem;
+        background-color: var(--c-primary-moderate-violet);
+        box-shadow: 4rem 6rem 5rem -6rem var(--c-primary-very-dark-grayish-blue);
+        position: relative;
+      }
+
+      .card__quote-icon {
+        top: 0;
+        right: 2.4rem;
+        position: absolute;
+        z-index: 1;
+      }
+
+      .card:nth-of-type(1) {
+        margin-top: 7rem;
+      }
+
+      .card--bg-moderate-violet {
+        background-color: var(--c-primary-moderate-violet); 
+      }
+      .card--bg-very-dark-grayish-blue {
+        background-color: var(--c-primary-very-dark-grayish-blue); 
+      }
+      .card--bg-white {
+        background-color: var(--c-primary-white); 
+      }
+      .card--bg-very-dark-blackish-blue {
+        background-color: var(--c-primary-very-dark-blackish-blue); 
+      }
+
+
+      .card__header {display: flex;
+        gap: 1.7rem;
+        padding-bottom: 1rem;
+      }
+      .card__icon {
+      }
+
+      .card__icon--border-violet {
+        border: 2px solid var(--c-primary-violet);
+      }
+
+      .card__icon img {
+        width: 2.8rem;
+        height: 2.8rem;
+        border-radius: 50%;
+      }
+
+      .card__user-info {
+
+      }
+      .card__name {
+        color: var(--c-primary-white);
+        font-size: 1.3rem;
+        line-height: 1.3rem;
+        
+        margin-bottom: 0.4rem;
+
+      }
+
+      .card__name--color-very-dark-grayish-blue {
+        color: var(--c-primary-very-dark-grayish-blue);
+      }
+
+      .card__status {
+        color: var(--c-primary-light-gray);
+        font-size: 1.1rem;
+        line-height: 1.1rem;
+
+
+
+      }
+      .card__summary {
+        margin-bottom: 1.6rem;
+        line-height: 2.4rem;
+        font-size: 2rem;
+        font-weight: var(--font-semibold);
+        color: var(--c-primary-white);
+        z-index: 2;
+        position: relative;
+      }
+
+      .card__summary--color-very-dark-grayish-blue {
+        color: var(--c-primary-very-dark-grayish-blue);
+      }
+
+      .card__quote {
+        font-size: 1.3rem;
+        line-height: 1.8rem;
+        font-weight: var(--font-medium);
+        color: var(--c-primary-light-gray);
+
+      }
+
+      .card__quote--color-very-dark-grayish-blue {
+        color: var(--c-primary-very-dark-grayish-blue);
+      }
+
+
+      .card__quote--opacity-70 {
+        opacity: 0.7;
+      }
+
+
+      @media only screen and (min-width: 1024px) {
+        main {
+          align-items: center;
+          height: 100dvh;
+        }
+        .container {
+          grid-template-columns: repeat(4, 1fr);
+          grid-template-rows: repeat(2, 1fr);
+          gap: 3rem;
+          row-gap: 2.4rem;
+          grid-template-areas: 
+           "card-a card-a card-b card-c"
+           "card-d card-e card-e card-c";
+
+          max-width: 111rem;
+          max-height: 57.2rem;
+        }
+
+        .card {
+          max-width: none;
+          margin-bottom: 0;
+          padding: 2.6rem;
+        }
+
+        
+        .card:nth-of-type(1) {
+          margin-top: 0;
+        }
+        .card__quote-icon {
+          right: 8rem;
+        }
+
+
+        .card--grid-a {
+         grid-area: card-a;
+        }
+
+        .card--grid-b {
+          grid-area: card-b;
+        }
+
+        .card--grid-c {
+          grid-area: card-c;
+        }
+
+        .card--grid-d {
+          grid-area: card-d;
+        }
+
+        .card--grid-e {
+          grid-area: card-e;
+        }
+      }
+
+
+    </style>
+  </head>
+  <body>
+    <main>
+      <div>
+        <div>
+          <div class="container">
+            <div class="card card--bg-moderate-violet card--grid-a">
+              <div class="card__header">
+                <div class="card__icon "><img alt="" class="card__icon--border-violet" src="./images/image-daniel.jpg"> </div>
+                <div class="card__user-info">
+                  <div class="card__name">Daniel Clifford</div>
+                  <div class="card__status">Verified Graduate</div>
+                </div>
+              </div>
+              <div class="card__quote-icon">
+                <svg width="104" height="102" xmlns="http://www.w3.org/2000/svg"><path d="M104 102V59.727H84.114c0-5.871.689-11.182 2.068-15.933 1.379-4.75 3.42-9.287 6.125-13.61C95.01 25.86 98.909 22.257 104 19.375V0c-9.758 4.27-17.712 9.874-23.864 16.813-6.151 6.939-10.712 14.545-13.681 22.818C63.485 47.904 62 59.941 62 75.74V102h42zm-62 0V59.727H22.114c0-5.871.689-11.182 2.068-15.933 1.379-4.75 3.42-9.287 6.125-13.61C33.01 25.86 36.909 22.257 42 19.375V0c-9.652 4.27-17.58 9.874-23.784 16.813C12.01 23.752 7.424 31.358 4.455 39.631 1.485 47.904 0 59.941 0 75.74V102h42z" fill="#A775F1" fill-rule="nonzero"/></svg>
+              </div>
+              <div class="card__summary">
+                I received a job offer mid-course, and the subjects I learned were
+                current, if not more so, in the company I joined. I honestly feel I
+                got every penny’s worth.
+              </div>
+              <div class="card__quote">
+                “ I was an EMT for many years before I joined the bootcamp. I’ve
+                been looking to make a transition and have heard some people who had
+                an amazing experience here. I signed up for the free intro course
+                and found it incredibly fun! I enrolled shortly thereafter. The next
+                12 weeks was the best - and most grueling - time of my life. Since
+                completing the course, I’ve successfully switched careers, working
+                as a Software Engineer at a VR startup. ”
+              </div>
+            </div>
+            <div class="card card--bg-very-dark-grayish-blue card--grid-b">
+              <div class="card__header">
+                <div class="card__icon "><img alt="" src="./images/image-jonathan.jpg"> </div>
+                <div class="card__user-info">
+                  <div class="card__name">Jonathan Walters</div>
+                  <div class="card__status">Verified Graduate</div>
+                </div>
+              </div>
+              <div class="card__summary">
+                The team was very supportive and kept me motivated
+              </div>
+              <div class="card__quote">
+                “ I started as a total newbie with virtually no coding skills. I
+                now work as a mobile engineer for a big company. This was one of the best
+                investments I’ve made in myself. ” 
+              </div>
+            </div>
+            <div class="card card--bg-white card--grid-d">
+              <div class="card__header">
+                <div class="card__icon "><img alt="" src="./images/image-jeanette.jpg"> </div>
+                <div class="card__user-info">
+                  <div class="card__name card__name--color-very-dark-grayish-blue">Jeanette Harmon</div>
+                  <div class="card__status">Verified Graduate</div>
+                </div>
+              </div>
+              <div class="card__summary card__summary--color-very-dark-grayish-blue">
+                An overall wonderful and rewarding experience
+              </div>
+              <div class="card__quote card__quote--color-very-dark-grayish-blue card__quote--opacity-70">
+                “ Thank you for the wonderful
+                experience! I now have a job I really enjoy, and make a good living while
+                doing something I love. ”
+              </div>
+            </div>
+            <div class="card card--bg-very-dark-blackish-blue card--grid-e">
+              <div class="card__header">
+                <div class="card__icon "><img alt="" class="card__icon--border-violet" src="./images/image-patrick.jpg"> </div>
+                <div class="card__user-info">
+                  <div class="card__name">Patrick Abrams</div>
+                  <div class="card__status">Verified Graduate</div>
+                </div>
+              </div>
+              <div class="card__summary">
+                Awesome teaching support from TAs who did the bootcamp themselves. Getting guidance from them and learning from their experiences was easy.
+              </div>
+              <div class="card__quote">
+                “ The staff seem genuinely
+                concerned about my progress which I find really refreshing. The program gave
+                me the confidence necessary to be able to go out in the world and present
+                myself as a capable junior developer. The standard is above the rest. You
+                will get the personal attention you need from an incredible community of
+                smart and amazing people. ” 
+              </div>
+            </div>
+            <div class="card card--bg-white card--grid-c">
+              <div class="card__header">
+                <div class="card__icon "><img alt=""  src="./images/image-kira.jpg"> </div>
+                <div class="card__user-info">
+                  <div class="card__name  card__name--color-very-dark-grayish-blue">Daniel Clifford</div>
+                  <div class="card__status"> Kira Whittle </div>
+                </div>
+              </div>
+              <div class="card__summary card__summary--color-very-dark-grayish-blue">
+                Graduate Such a
+                life-changing experience. Highly recommended!
+              </div>
+              <div class="card__quote card__quote--color-very-dark-grayish-blue card__quote--opacity-70">
+                “ Before joining the bootcamp,
+                I’ve never written a line of code. I needed some structure from
+                professionals who can help me learn programming step by step. I was
+                encouraged to enroll by a former student of theirs who can only say
+                wonderful things about the program. The entire curriculum and staff did not
+                disappoint. They were very hands-on and I never had to wait long for
+                assistance. The agile team project, in particular, was outstanding. It took
+                my learning to the next level in a way that no tutorial could ever have. In
+                fact, I’ve often referred to it during interviews as an example of my
+                developent experience. It certainly helped me land a job as a full-stack
+                developer after receiving multiple offers. 100% recommend! ”
+              </div>
+            </div>
+          </div>
+    </main>
+  </body>
+</html>
